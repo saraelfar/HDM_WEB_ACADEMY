@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HDM Web Academy - AI & Digital Marketing Solutions</title>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href="#"><img src="logo2.png" alt="HDM Web Academy Logo"/></a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#academy"><i class="fa-solid fa-graduation-cap"></i> Academy</a></li>
+        <li><a href="#services"><i class="fa-solid fa-code"></i> Programming</a></li>
+        <li><a href="#articles"><i class="fa-solid fa-newspaper"></i> Articles</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></div>
+  </div>
+</header>
+
+<!-- Home Section -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Transform Your Business with AI Solutions</h1>
+      <p>HDM Web Academy: Your partner in digital transformation and AI integration in Morocco</p>
+      <a href="#contact" class="btn">Start Your AI Journey</a>
+    </div>
+    <img src="robot.png" alt="AI Solutions" class="hero-image"/>
+  </div>
+</section>
+
+
+
+<!-- Academy Section -->
+<section id="academy" class="academy">
+  <h2>AI & Digital Marketing Courses</h2>
+  <div class="courses-grid">
+    <div class="course-card">
+      <i class="fa-solid fa-robot"></i>
+      <h3>AI Fundamentals</h3>
+      <p>Master the basics of Artificial Intelligence and Machine Learning</p>
+    </div>
+    <div class="course-card">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>Digital Marketing Strategy</h3>
+      <p>Learn data-driven marketing techniques for Moroccan markets</p>
+    </div>
+    <div class="course-card">
+      <i class="fa-solid fa-code"></i>
+      <h3>Web Development Bootcamp</h3>
+      <p>Full-stack development with focus on AI integration</p>
+    </div>
+  </div>
+</section>
+<!-- Success Section -->
+<section class="success-section">
+  <div class="content-container">
+    <div class="text-content">
+      <h1>
+        <span class="orange">YOUR SUCCESS</span><br />
+        <span class="blue">IS OUR FIRST PASSION</span>
+      </h1>
+      <p>
+        Our experts are with you from the very first steps! We provide a
+        comprehensive market analysis, guaranteed pricing strategies, and
+        customized marketing plans tailored to your unique business needs.
+      </p>
+      <a href="#contact" class="cta-button">
+        ⭐ START NOW AND BENEFIT FROM A FREE CONSULTATION
+      </a>
+    </div>
+    <div class="image-content">
+      <img src="sucees.png" alt="Success Graph" style="height: 400px; width: 400px;"/>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services">
+  <h2>Our Professional Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="edt.jfif" alt="Video Production" />
+      <h3>Video Production</h3>
+      <p>Professional video shooting and editing services</p>
+    </div>
+    <div class="service-card">
+      <img src="design.jfif" alt="Graphic Design" />
+      <h3>Graphic Design</h3>
+      <p>Creative visual solutions for your brand</p>
+    </div>
+    <div class="service-card">
+      <img src="web.jfif" alt="Web Development" />
+      <h3>Web Development</h3>
+      <p>Custom websites and web applications</p>
+    </div>
+    <div class="service-card">
+      <img src="social_media.jfif" alt="Social Media Management" />
+      <h3>Social Media Management</h3>
+      <p>Complete social media strategy and execution</p>
+    </div>
+    <div class="service-card">
+      <img src="ecom.jfif" alt="E-commerce Solutions" />
+      <h3>E-commerce Solutions</h3>
+      <p>AI-powered online stores</p>
+    </div>
+  </div>
+</section>
+
+<!-- Articles Section -->
+<section id="articles" class="articles">
+  <h2>Latest AI Insights</h2>
+  <div class="articles-grid">
+    <article class="article-card">
+      <img src="images/morocco-ai.jpg" alt="AI in Morocco"/>
+      <div class="article-content">
+        <h3>Morocco's Path to AI Leadership</h3>
+        <p>Exploring Morocco's national AI strategy and 2030 vision</p>
+        <a href="#" class="btn-read">Read More</a>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <img src="images/ai-jobs.jpg" alt="AI Jobs"/>
+      <div class="article-content">
+        <h3>Future of Work in AI Era</h3>
+        <p>Essential skills for the evolving Moroccan job market</p>
+        <a href="#" class="btn-read">Read More</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <h2>Contact Our AI Experts</h2>
+
+  <!-- Motivational CTA Message -->
+  <div class="cta-message">
+    <p>
+      <strong>Don't miss the opportunity and join the digital transformation.</strong><br>
+      All you have to do is take the first step… <span>we’ll complete the journey with you.</span>
+    </p>
+  </div>
+
+  <div class="contact-container">
+    <form id="contactForm">
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" required/>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Your Email" required/>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1720.3101034567923!2d-7.983582607455354!3d31.564716799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda5510028596db3%3A0x1381ac0d8e41acbf!2sHDM%20WEB%20ACADEMY!5e0!3m2!1sen!2sfr!4v1718800000000!5m2!1sen!2sfr" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-label="HDM Web Academy Location Map">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Social Media Icons -->
+  <div class="contact-icons">
+    <a href="https://wa.me/your-number" target="_blank" class="icon" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.facebook.com/your-page" target="_blank" class="icon" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://twitter.com/your-account" target="_blank" class="icon" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>HDM Web Academy</h4>
+      <p>Empowering businesses with AI & digital solutions.</p>
+    </div>
+  </div>
+</footer>
+<!-- Chatbot Icon -->
+<div class="chatbot-icon" onclick="toggleChat()">
+    <img src="rafiqq.jfif" alt="Chatbot" />
+  </div>
+  
+  <!-- Chatbot Window -->
+  <div class="chatbot-window" id="chatWindow">
+    <div class="chatbot-header">
+      <span>AI Assistant</span>
+      <button onclick="toggleChat()">✖</button>
+    </div>
+    <div class="chatbot-body">
+      <p>Hello! How can I help you today? 🤖</p>
+      <!-- You can embed your chatbot iframe or script here -->
+    </div>
+  </div>
+  
+<script src="main.js"></script>
+</body>
+</html>
