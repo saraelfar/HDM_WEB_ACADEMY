@@ -315,19 +315,33 @@
 <!-- Add this inside your HTML file, before the closing </body> tag -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  (function () {
-    emailjs.init("L_Tq5MBE2hInKH4C_"); // Your public key
+  (function() {
+    // Initialize EmailJS
+    emailjs.init("L_Tq5MBE2hInKH4C_");
 
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
+    // Form submission handler
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
+      
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      // Loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-      emailjs.sendForm("service_6lyjcih", "template_sarlwcx", this)
-        .then(function () {
-          alert("✅ Message sent successfully!");
-          document.getElementById("contactForm").reset(); // Clear the form
-        }, function (error) {
-          console.error("❌ Failed to send message:", error);
-          alert("❌ Failed to send message. Please try again.");
+      emailjs.sendForm("service_neusba2", "template_sarlwcx", this)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Message sent successfully!');
+          this.reset();
+        }.bind(this), function(error) {
+          console.error('FAILED...', error);
+          alert('Message failed to send. Please try again later.');
+        })
+        .finally(function() {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
         });
     });
   })();
