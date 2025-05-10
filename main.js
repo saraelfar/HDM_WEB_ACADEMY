@@ -244,28 +244,28 @@
             "read_more": "Read Full Article",
             "view_all": "View All Articles"
           },
-          "contact": {
-            "title": "Contact Our AI Experts",
-            "motivation": "<strong>Don't miss the opportunity and join the digital transformation.</strong><br>All you have to do is take the first step… <span>we'll complete the journey with you.</span>",
-            "form": {
-              "full_name": "Your Full Name",
-              "email": "Your Email Address",
-              "phone": "Your Phone Number",
-              "company": "Company Name",
-              "website": "Company Website or Social Media Link (optional)",
-              "service_default": "I'm interested in...",
-              "service1": "Branding",
-              "service2": "Social Media Marketing",
-              "service3": "SEO Optimization",
-              "service4": "Content Marketing",
-              "service5": "Website Design & Development",
-              "service6": "Other",
-              "message": "Tell us more about your project or needs...",
-              "submit": "Send Message",
-              "submit_success": "Message sent successfully!",
-              "submit_error": "Error sending message"
-            }
-          },
+"contact": {
+      "title": "Contact Our AI Experts",
+      "motivation": "<strong>Don't miss the opportunity and join the digital transformation.</strong><br>All you have to do is take the first step… <span>we'll complete the journey with you.</span>",
+      "form": {
+        "full_name": "Your Full Name",
+        "email": "Your Email Address",
+        "phone": "Your Phone Number",
+        "company": "Company Name",
+        "website": "Company Website or Social Media Link (optional)",
+        "service_default": "I'm interested in...",
+        "service1": "Branding",
+        "service2": "Social Media Marketing",
+        "service3": "SEO Optimization",
+        "service4": "Content Marketing",
+        "service5": "Website Design & Development",
+        "service6": "Other",
+        "message": "Tell us more about your project or needs...",
+        "submit": "Send Message",
+        "submit_success": "Message sent successfully!",
+        "submit_error": "Error sending message"
+      }
+    },
           "footer": {
             "title": "HDM Web Academy",
             "description": "Empowering businesses with AI & digital solutions."
@@ -482,10 +482,10 @@
             "read_more": "اقرأ المقال كاملًا",
             "view_all": "عرض جميع المقالات"
           },
-          "contact": {
-            "title": "اتصل بخبراء الذكاء الاصطناعي",
-            "motivation": "<strong>لا تفوت الفرصة وانضم إلى التحول الرقمي.</strong><br>كل ما عليك فعله هو اتخاذ الخطوة الأولى… <span>سنكمل الرحلة معك.</span>",
-            "form": {
+    "contact": {
+      "title": "اتصل بخبراء الذكاء الاصطناعي",
+      "motivation": "<strong>لا تفوت الفرصة وانضم إلى التحول الرقمي.</strong><br>كل ما عليك فعله هو اتخاذ الخطوة الأولى… <span>سنكمل الرحلة معك.</span>",
+      "form": {
               "full_name": "اسمك الكامل",
               "email": "عنوان بريدك الإلكتروني",
               "phone": "رقم هاتفك",
@@ -689,3 +689,82 @@
   };
 
   initializeAll();
+
+
+  // Toggle course details on click
+function toggleCourseDetails(element) {
+  const details = element.querySelector('.course-hover-details');
+  const isMobile = window.matchMedia("(hover: none)").matches;
+  
+  if (isMobile) {
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    element.classList.toggle('active');
+  }
+}
+
+// Close details when clicking elsewhere
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.course-preview')) {
+    document.querySelectorAll('.course-hover-details').forEach(details => {
+      details.style.display = 'none';
+    });
+    document.querySelectorAll('.course-preview').forEach(course => {
+      course.classList.remove('active');
+    });
+  }
+});
+
+// Keep hover for desktop
+document.querySelectorAll('.course-preview').forEach(course => {
+  course.addEventListener('mouseenter', function() {
+    if (!window.matchMedia("(hover: none)").matches) {
+      this.querySelector('.course-hover-details').style.display = 'block';
+    }
+  });
+  
+  course.addEventListener('mouseleave', function() {
+    if (!window.matchMedia("(hover: none)").matches) {
+      this.querySelector('.course-hover-details').style.display = 'none';
+    }
+  });
+});
+// Mobile course toggle functionality
+document.querySelectorAll('.course-preview').forEach(course => {
+  course.addEventListener('click', function() {
+    if (window.innerWidth <= 768) { // Only for mobile
+      this.classList.toggle('active');
+      
+      // Close other open courses
+      document.querySelectorAll('.course-preview').forEach(otherCourse => {
+        if (otherCourse !== this) {
+          otherCourse.classList.remove('active');
+        }
+      });
+    }
+  });
+});
+
+// Close when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.course-preview') && window.innerWidth <= 768) {
+    document.querySelectorAll('.course-preview').forEach(course => {
+      course.classList.remove('active');
+    });
+  }
+});
+// To remember if chat was open between page refreshes
+window.addEventListener('DOMContentLoaded', () => {
+  const wasOpen = localStorage.getItem('chatOpen') === 'true';
+  if (wasOpen) toggleChat();
+});
+
+// Update when toggling
+function toggleChat(event) {
+  // ... existing code ...
+  localStorage.setItem('chatOpen', chatIsOpen);
+}
+
+// When setting the content, use innerHTML instead of textContent
+document.querySelector('.cta-message p').innerHTML = 
+  '<strong>Don\'t miss the opportunity and join the digital transformation.</strong><br>' +
+  'All you have to do is take the first step… <span>we\'ll complete the journey with you.</span>';

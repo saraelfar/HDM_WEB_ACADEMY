@@ -12,8 +12,12 @@
     <title data-i18n="title">HDM Web Academy - AI & Digital Marketing Solutions</title>
     <link rel="icon" type="image/png" href="pic/logo2.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="styles.css"/>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="styles.css"/>  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init("L_Tq5MBE2hInKH4C_"); // Your EmailJS Public Key
+      })();
+    </script>
 </head>
 <body>
 
@@ -255,8 +259,9 @@
 
   <!-- Motivational CTA Message -->
   <div class="cta-message">
-    <p data-i18n="contact.motivation">
-      <strong   data-i18n="contact.motivation">Don't miss the opportunity and join the digital transformation.</strong><br>
+    <p data-i18n-html="contact.motivation">
+      <!-- Default content will be replaced -->
+      <strong>Don't miss the opportunity and join the digital transformation.</strong><br>
       All you have to do is take the first step… <span>we'll complete the journey with you.</span>
     </p>
   </div>
@@ -307,6 +312,27 @@
     
       <button type="submit" class="btn" data-i18n="contact.form.submit">Send Message</button>
     </form>
+<!-- Add this inside your HTML file, before the closing </body> tag -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("L_Tq5MBE2hInKH4C_"); // Your public key
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      emailjs.sendForm("service_6lyjcih", "template_sarlwcx", this)
+        .then(function () {
+          alert("✅ Message sent successfully!");
+          document.getElementById("contactForm").reset(); // Clear the form
+        }, function (error) {
+          console.error("❌ Failed to send message:", error);
+          alert("❌ Failed to send message. Please try again.");
+        });
+    });
+  })();
+</script>
+
 
     <div class="map-container">
       <iframe 

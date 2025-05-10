@@ -209,6 +209,7 @@
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
+
   
   .service-card i {
     font-size: 2.5em;
@@ -543,6 +544,38 @@
       font-size: 2rem;
     }
   }
+  /* Add these new rules to your existing CSS without changing anything else */
+
+/* Mobile click functionality */
+@media (max-width: 768px) {
+  .course-hover-details {
+    display: none;
+    /* Preserve your existing hover-details styles */
+  }
+  
+  .course-preview.active .course-hover-details {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .course-preview.active .caret {
+    transform: rotate(180deg);
+  }
+}
+
+/* Small animation for mobile */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Make sure clickable area is good for touch */
+@media (hover: none) {
+  .course-header {
+    padding: 20px;
+    min-height: 60px;
+  }
+}
 /* Chatbot Sticky Icon */
 .chatbot-icon {
   position: fixed;
@@ -635,7 +668,18 @@
     right: 2.5vw;
     bottom: 90px;
     max-height: 60vh;
-  }
+  }/* Add to your CSS for smoother transitions */
+.chatbot-window {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: bottom right;
+}
+
+.chatbot-window[style*="display: none"] {
+  display: flex !important;
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
 
   /* Enhanced Mobile Navigation */
   .nav-links {
@@ -1314,4 +1358,26 @@ body.rtl {
   border-color: #ff8000;
   box-shadow: 0 0 8px rgba(255, 128, 0, 0.5);
   outline: none;
+}
+.cta-message {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.cta-message p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.cta-message strong {
+  color: #307b8c;
+  font-weight: 600;
+}
+
+.cta-message span {
+  color: #ff8000;
+  font-weight: 500;
 }
